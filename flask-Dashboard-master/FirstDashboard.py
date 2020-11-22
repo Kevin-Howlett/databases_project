@@ -27,16 +27,19 @@ def create_plot(feature):
           scaler = MinMaxScaler()
           df2 = df
           df2.loc[:, df2.columns != 'country'] = scaler.fit_transform(df2.loc[:, df2.columns != 'country'])
+          df2['agg'] = df2[list(df2.columns[1:])].sum(axis=1)
+          df2.sort_values(by=['agg'],ascending=False,inplace=True)
+          df2 = df2.drop(columns=['agg'])
+
 
           l = []
-          for i in range(len(df2['country'])):
-              l.append(go.Bar(name = 'Data 1', x = df2['country'], y = df2.loc[i][1:].tolist()))
+          for i in range(len(df2.columns)-1):
+              l.append(go.Bar(name = df2.columns[i+1], x = df2['country'][:20], y = df.iloc[:20,i+1].tolist()))
 
 
           fig = go.Figure(data=l)
  
           fig.update_layout(barmode='stack')
- 
 
         
     else:
@@ -171,11 +174,7 @@ def create_plot(feature):
                           args = [{'visible': [False, False,False,False,False, False,False,False,False, False,False,False,False, False,False,False,False, False,False,False,False,False,True,False]}, # the index of True aligns with the indices of plot traces
                                   {'title': 'Social Support (1-10)',
                                    'showlegend':True}]),
-                     dict(label = 'pay',
-                          method = 'update',
-                          args = [{'visible': [False, False,False,False,False, False,False,False,False, False,False,False,False, False,False,False,False, False,False,False,False,False,False,True]},
-                                  {'title': 'Pay (USD)',
-                                   'showlegend':True}]),
+
 
                     ])
                 )
