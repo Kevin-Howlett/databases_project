@@ -23,17 +23,19 @@ def create_plot(feature):
     df = df.drop(columns=['unempbenefits','afp_totlabforce','afp_total','cgd_total','peacekeepers','suic_mortalityrate_pop','suic_mortalityrate_female','suic_mortalityrate_male'])
 
     if feature =='Bar':
-          x = df.values #returns a numpy array
-          min_max_scaler = preprocessing.MinMaxScaler()
-          x_scaled = min_max_scaler.fit_transform(x)
-          df2 = pd.DataFrame(x_scaled)
-          df2
+          scaler = MinMaxScaler()
+          df2 = df
+          df2.loc[:, df2.columns != 'country'] = scaler.fit_transform(df2.loc[:, df2.columns != 'country'])
 
-          
+          l = []
+          for i in range(len(df2['country'])):
+              l.append(go.Bar(name = 'Data 1', x = df2['country'], y = df2.loc[i][1:].tolist()))
+
+
+          fig = go.Figure(data=l)
  
-plot.update_layout(barmode='stack')
+          fig.update_layout(barmode='stack')
  
-plot.update_layout(barmode='stack')
 
         
     else:
