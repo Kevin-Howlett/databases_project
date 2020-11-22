@@ -5,12 +5,38 @@ import plotly.graph_objs as go
 import plotly.figure_factory as ff
 from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
+import psycopg2
 
 import pandas as pd
 import json
 
 app = Flask(__name__)
 
+conn = psycopg2.connect("dbname=nullset user=wtien")
+cur = conn.cursor()
+
+
+cur.execute("""SELECT * FROM dat_sci_country;""")
+dat_sci = pd.DataFrame(cur.fetchall())
+cur.execute("""select * from dat_sci_country limit 0""")
+colnames = [desc[0] for desc in cur.description]
+dat_sci.columns = colnames
+
+
+cur.execute("SELECT * FROM happy;""")
+happy = pd.DataFrame(cur.fetchall())
+cur.execute("""select * from happy limit 0""")
+colnames = [desc[0] for desc in cur.description]
+happy.columns = colnames
+
+cur.execute("""SELECT * FROM wdi;""")
+wdi = pd.DataFrame(cur.fetchall())
+cur.execute("""select * from wdi limit 0""")
+colnames = [desc[0] for desc in cur.description]
+wdi.columns = colnames
+
+df1 = wdi.join(happy.set_index('country'), on='country')
+df = df1.join(dat_sci.set_index('country'), on='country')
 
 @app.route('/')
 def index():
