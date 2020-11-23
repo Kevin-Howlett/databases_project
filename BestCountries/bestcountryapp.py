@@ -21,9 +21,9 @@ app = Flask(__name__)
 # TODO change when importing into flask
 df = pd.read_csv('allData.csv', header=0)
 val_desc = pd.read_csv('valdescs.csv', header=0)
+val_desc.set_index([" "], inplace=True, drop=True)
 with open('bycont.csv') as csvfile:
     by_continent = list(csv.reader(csvfile))[0]
-
 # drop columns that are mostly empty
 df = df.drop(columns=['unempbenefits', 'afp_totlabforce', 'afp_total', 'cgd_total', 'peacekeepers',
                       'suic_mortalityrate_pop', 'suic_mortalityrate_female', 'suic_mortalityrate_male'])
