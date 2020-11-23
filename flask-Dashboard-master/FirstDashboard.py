@@ -37,6 +37,7 @@ wdi.columns = colnames
 
 df1 = wdi.join(happy.set_index('country'), on='country')
 df = df1.join(dat_sci.set_index('country'), on='country')
+df = df.drop(columns=['unempbenefits','afp_totlabforce','afp_total','cgd_total','peacekeepers','suic_mortalityrate_pop','suic_mortalityrate_female','suic_mortalityrate_male'])
 
 @app.route('/')
 def index():
@@ -45,9 +46,6 @@ def index():
     return render_template('index.html', plot=bar)
 
 def create_plot(feature):
-    
-    df = pd.read_csv('allData.csv')
-    df = df.drop(columns=['unempbenefits','afp_totlabforce','afp_total','cgd_total','peacekeepers','suic_mortalityrate_pop','suic_mortalityrate_female','suic_mortalityrate_male'])
 
     if feature =='Bar':
           scaler = MinMaxScaler()
