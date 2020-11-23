@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>My First Dashboard</title>
+    <title>Plot set 1: Country selected attributes</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
 </head>
@@ -10,10 +10,10 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-3">
-            <label> Choose the plot type....</label>
-            <select class="form-control" id ='first_cat'>
-                <option value="Bar">Bar</option>
-                <option value="Box">Box</option>
+            <label> View Plot: </label>
+            <select class="form-control" id='first_cat'>
+                <option value="All Countries Bar Plot">All Countries Bar Plot</option>
+                <option value="All Countries Box-Scatter Plot">All Countries Box-Scatter Plot</option>
             </select>
         </div>
         <div class="col-md-6">
@@ -21,6 +21,8 @@
                 <script>
                     var graphs = {{plot | safe}};
                     Plotly.plot('bargraph',graphs,{});
+
+
                 </script>
             </div>
         </div>
@@ -28,5 +30,6 @@
 </div>
 <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+
 </body>
 </html>
