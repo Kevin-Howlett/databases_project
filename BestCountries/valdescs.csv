@@ -1,0 +1,31 @@
+Variable Name,Description
+country ,Country Name
+unempbenefits ,Adequacy of unemployment benefits and ALMP (% of total welfare of beneficiary households)
+afp_totlabforce ,Armed forces personnel (% of total labor force)
+afp_total ,"Armed forces personnel, total"
+cgd_total ,"Central government debt, total (% of GDP)"
+cureduexpen_pri ,"Current education expenditure, primary (% of total expenditure in primary public institutions)"
+cureduexpen_sec ,"Current education expenditure, secondary (% of total expenditure in secondary public institutions)"
+cureduexpen_ter ,"Current education expenditure, tertiary (% of total expenditure in tertiary public institutions)"
+cureduexpen_total ,"Current education expenditure, total (% of total expenditure in public institutions)"
+eduattain_doctoral ,"Educational attainment, Doctoral or equivalent, population 25+,total (%) (cumulative)"
+eduattain_bachelor ,"Educational attainment, at least Bachelor's or equivalent, population 25+, total (%) (cumulative)"
+eduattain_master ,"Educational attainment, at least Master's or equivalent, population 25+, total (%) (cumulative)"
+eduattain_sec ,"Educational attainment, at least completed lower secondary, population 25+, total (%) (cumulative)"
+eduattain_postsec ,"Educational attainment, at least completed po"
+eduattain_primary ,"Educational attainment, at least completed primary, population 25+ years, total (%) (cumulative)"
+eduattain_tertiary ,"Educational attainment, at least completed sho"
+eduattain_uppersec ,"Educational attainment, at least completed upper secondary, population 25+, total (%) (cumulative)"
+expense ,Expense (% of GDP)
+life_expectatbirth_fem ,"Life expectancy at birth, female (years)"
+life_expectatbirth_male ,"Life expectancy at birth, male (years)"
+life_expectatbirth_total ,"Life expectancy at birth, total (years)"
+milexp_gdp ,ilitary expenditure (% of GDP)
+milexp_usd ,ilitary expenditure (current USD)
+peacekeepers ,"Presence of peace keepers (number of troops, police, and military observers in mandate)"
+suic_mortalityrate_pop ,"Suicide mortality rate (per 100,000 population)"
+suic_mortalityrate_female ,"Suicide mortality rate, female (per 100,000 female population)"
+suic_mortalityrate_male ,"Suicide mortality rate, male (per 100,000 male population)"
+totalreserves ,Total reserves (% of total external debt)
+unemptotal_modeILOest ,"Unemployment, total (% of total labor force) (modeled ILO estimate)"
+unemptotal_nationalest ,"Unemployment, total (% of total labor force) (national estimate)"

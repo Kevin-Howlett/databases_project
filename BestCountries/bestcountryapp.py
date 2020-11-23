@@ -20,6 +20,7 @@ app = Flask(__name__)
 # ===========================
 # TODO change when importing into flask
 df = pd.read_csv('allData.csv', header=0)
+val_desc = pd.read_csv('valdescs.csv', header=0)
 with open('bycont.csv') as csvfile:
     by_continent = list(csv.reader(csvfile))[0]
 
@@ -38,7 +39,7 @@ def index():
     bar2 = create_plot2()
     return render_template('index.html',
                            plot=bar, plot2=bar2,
-                           tables=[df.to_html(classes='data')], titles=df.columns.values)
+                           tables=[val_desc.to_html(classes='data')], titles=val_desc.columns.values)
 
 
 def create_plot2():
