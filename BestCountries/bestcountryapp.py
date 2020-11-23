@@ -9,55 +9,51 @@ from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
 import json
 
+# ===========================
+# INITIATE APP INSTANCE
+# ===========================
 app = Flask(__name__)
 
+# ===========================
+# IMPORT DATA
+# ===========================
+df = pd.read_csv('allData.csv', header=0)  # TODO change when importing into flask
+by_continent = pd.read_csv('bycont.csv', header=0)
 
+# drop columns that are mostly empty
+df = df.drop(columns=['unempbenefits', 'afp_totlabforce', 'afp_total', 'cgd_total', 'peacekeepers',
+                      'suic_mortalityrate_pop', 'suic_mortalityrate_female', 'suic_mortalityrate_male'])
+
+
+# ===========================
+# APP CONTENT
+# ===========================
 @app.route('/')
 def index():
     feature = 'Bar'
     bar = create_plot(feature)
     bar2 = create_plot2()
-    return render_template('index.html', plot=bar, plot2=bar2)
+    return render_template('index.html',
+                           plot=bar, plot2=bar2,
+                           tables=[df.to_html(classes='data')], titles=df.columns.values)
 
 
 def create_plot2():
-    # ===========================
-    # IMPORT DATA
-    # ===========================
-    df = pd.read_csv('allData.csv', header=0)  # TODO change when importing into flask
+    # PLOT DS SALARY DATA - BAR
+    fig2 = px.bar(df, x="country", y="pay_usd", title="Data Science Job Salaries by Country")
 
-    # drop columns that are mostly empty
-    df = df.drop(columns=['unempbenefits', 'afp_totlabforce', 'afp_total', 'cgd_total', 'peacekeepers',
-                          'suic_mortalityrate_pop', 'suic_mortalityrate_female', 'suic_mortalityrate_male'])
-
-    # ===========================
-    # BAR PLOT
-    # ===========================
-    # scale all columns from 0-1
-    scaler = MinMaxScaler()
-    df2 = df.copy()
-    df2.loc[:, df2.columns != 'country'] = scaler.fit_transform(df2.loc[:, df2.columns != 'country'])
-
-    # PLOT DATA - BAR
-    fig = px.bar(df2, x="country", y=list(df2.columns[1:]), title="All Countries Stacked Bar Plot by Attribute")
-
-    fig.update_layout(
+    fig2.update_layout(
         barmode='stack',
-        xaxis={'categoryorder': 'category ascending'})
-
-    return plotly.io.to_json(fig)
+        xaxis={'categoryorder':'array', 'categoryarray':by_continent},
+        yaxis={'title': 'Yearly Income (USD)'})
+    fig2.update_layout(
+        autosize=False,
+        width=1200,
+        height=500)
+    return plotly.io.to_json(fig2)
 
 
 def create_plot(feature):
-    # ===========================
-    # IMPORT DATA
-    # ===========================
-    df = pd.read_csv('allData.csv', header=0)  # TODO change when importing into flask
-
-    # drop columns that are mostly empty
-    df = df.drop(columns=['unempbenefits', 'afp_totlabforce', 'afp_total', 'cgd_total', 'peacekeepers',
-                          'suic_mortalityrate_pop', 'suic_mortalityrate_female', 'suic_mortalityrate_male'])
-
     # ===========================
     # BOX-SCATTER PLOT
     # ===========================
@@ -283,6 +279,9 @@ def create_plot(feature):
             xaxis={'categoryorder': 'total descending'})
         fig.update_xaxes(title={'text': None})
 
+    # ===========================
+    # RESIZE PLOT
+    # ===========================
     fig.update_layout(
         autosize=False,
         width=1200,

@@ -9,6 +9,15 @@
 <!-- Styling -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+table, td, th {
+  border: 1px solid black;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+</style>
 
 
 <body>
@@ -36,6 +45,12 @@
     <div class="w3-container w3-padding-32" id="Table1">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Attribute Description Guide</h3>
         <p>SUM TEXT HERE.</p>
+        <table>
+            {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+            {% endfor %}
+        </table>
     </div>
 
     <!-- Data Science Salary Countries Section -->
