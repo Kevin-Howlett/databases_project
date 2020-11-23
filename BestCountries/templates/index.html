@@ -52,6 +52,7 @@ table, td, th{
     <div class="w3-container w3-padding-32" id="Plot1">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Best Countries by Attributes</h3>
         <p>SUM TEXT HERE.</p>
+        <br>
         {% include "plots1.html" %}
     </div>
 
@@ -60,6 +61,7 @@ table, td, th{
     <div class="w3-container w3-padding-32" id="Table1">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Attribute Description Guide</h3>
         <p>SUM TEXT HERE.</p>
+        <br>
         <table>
             {% for table in tables %}
             {{titles[loop.index]}}
