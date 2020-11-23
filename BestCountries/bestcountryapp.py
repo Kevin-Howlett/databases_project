@@ -7,6 +7,7 @@ from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 
 import pandas as pd
+import csv
 import json
 
 # ===========================
@@ -17,8 +18,10 @@ app = Flask(__name__)
 # ===========================
 # IMPORT DATA
 # ===========================
-df = pd.read_csv('allData.csv', header=0)  # TODO change when importing into flask
-by_continent = pd.read_csv('bycont.csv', header=0)
+# TODO change when importing into flask
+df = pd.read_csv('allData.csv', header=0)
+with open('bycont.csv') as csvfile:
+    by_continent = list(csv.reader(csvfile))[0]
 
 # drop columns that are mostly empty
 df = df.drop(columns=['unempbenefits', 'afp_totlabforce', 'afp_total', 'cgd_total', 'peacekeepers',
@@ -276,7 +279,7 @@ def create_plot(feature):
 
         fig.update_layout(
             barmode='stack',
-            xaxis={'categoryorder': 'total descending'})
+            xaxis={'categoryorder':'array', 'categoryarray':by_continent})
         fig.update_xaxes(title={'text': None})
 
     # ===========================
