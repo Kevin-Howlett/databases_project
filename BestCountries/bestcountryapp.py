@@ -66,7 +66,7 @@ def create_plot(feature):
 
         fig = go.Figure()
 
-        for column in df.columns[1:].to_list():
+        for column in df.columns[1:-1].to_list():
             fig.add_trace(
                 go.Box(
                     y=df[column],
@@ -84,7 +84,7 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [True, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Primary Education Expenditure',
                                     'showlegend': True}]),
@@ -92,14 +92,14 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, True, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    {'title': 'Secondary Education Expenditure',
                                     'showlegend': True}]),
                         dict(label='cureduexpen_ter',
                              method='update',
                              args=[{'visible': [False, False, True, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Tertiary Education Expenditure',
                                     'showlegend': True}]),
@@ -107,14 +107,14 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, False, False, True, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    {'title': 'Total Education Expenditure',
                                     'showlegend': True}]),
                         dict(label='eduattain_doctoral',
                              method='update',
                              args=[{'visible': [False, False, False, False, True, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Doctoral Education Attainment',
                                     'showlegend': True}]),
@@ -122,14 +122,14 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, False, False, False, False, True, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    {'title': "Bachelor's Education Attainment",
                                     'showlegend': True}]),
                         dict(label='eduattain_master',
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, True, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': "Master's Education Attainment",
                                     'showlegend': True}]),
@@ -137,14 +137,14 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, True, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    {'title': 'Secondary Education Attainment',
                                     'showlegend': True}]),
                         dict(label='eduattain_postsec',
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, True, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Post-Secondary Education Attainment',
                                     'showlegend': True}]),
@@ -152,14 +152,14 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, True,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    {'title': 'Primary Education Attainment',
                                     'showlegend': True}]),
                         dict(label='eduattain_tertiary',
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 True, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Tertiary Education Attainment',
                                     'showlegend': True}]),
@@ -167,14 +167,14 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, True, False, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    {'title': 'Upper Secondary Education Attainment',
                                     'showlegend': True}]),
                         dict(label='expense',
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, True, False, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Total Expenses (% GDP)',
                                     'showlegend': True}]),
@@ -182,14 +182,14 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, True, False, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    {'title': 'Life Expectancy, Female (Years)',
                                     'showlegend': True}]),
                         dict(label='life_expectatbirth_male',
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, True, False, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Life Expectancy Male (Years)',
                                     'showlegend': True}]),
@@ -197,14 +197,14 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, True, False, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    {'title': 'Life Expectancy Total (Years)',
                                     'showlegend': True}]),
                         dict(label='milexp_gdp',
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, True, False, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Military Expenditure (% GDP)',
                                     'showlegend': True}]),
@@ -212,14 +212,14 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, True, False, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    {'title': 'Military Expenditure (USD)',
                                     'showlegend': True}]),
                         dict(label='totalreserves',
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, True, False,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Total Reserves (% external debt)',
                                     'showlegend': True}]),
@@ -227,14 +227,14 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, True,
-                                                False, False, False, False]},
+                                                False, False, False]},
                                    {'title': 'Unemployment ILO (% Total Labor Force)',
                                     'showlegend': True}]),
                         dict(label='unemptotal_nationalest',
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                True, False, False, False]},
+                                                True, False, False]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Unemployment National (% Total Labor Force)',
                                     'showlegend': True}]),
@@ -242,24 +242,18 @@ def create_plot(feature):
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, True, False, False]},
+                                                False, True, False]},
                                    {'title': 'Happiness Score (1-10)',
                                     'showlegend': True}]),
                         dict(label='social_support',
                              method='update',
                              args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
                                                 False, False, False, False, False, False, False, False, False, False,
-                                                False, False, True, False]},
+                                                False, False, True]},
                                    # the index of True aligns with the indices of plot traces
                                    {'title': 'Social Support (1-10)',
                                     'showlegend': True}]),
-                        dict(label='pay',
-                             method='update',
-                             args=[{'visible': [False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, False, False, False, False, False, False, False,
-                                                False, False, False, True]},
-                                   {'title': 'Pay (USD)',
-                                    'showlegend': True}]),
+
 
                     ])
             )
@@ -275,6 +269,7 @@ def create_plot(feature):
         scaler = MinMaxScaler()
         df2 = df.copy()
         df2.loc[:, df2.columns != 'country'] = scaler.fit_transform(df2.loc[:, df2.columns != 'country'])
+        df2.drop('pay_usd', axis=1, inplace=True)
 
         # PLOT DATA - BAR
         fig = px.bar(df2, x="country", y=list(df2.columns[1:]), title="All Countries Stacked Bar Plot by Attribute")
