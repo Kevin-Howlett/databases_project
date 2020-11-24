@@ -3,7 +3,7 @@
 
 <title>Best Countries - DB Project</title>
 <meta charset="UTF-8">
-<meta name="description" content="Project for NCF Y2 Databases, 2020">
+<meta name="description" content="Project for NCF Y1 Databases, 2020">
 <meta name="author" content="Hutch, Kevin, Sumitra, and Viv">
 
 <!-- Styling -->
@@ -34,10 +34,6 @@ table, td, th{
 }
 
 
-
-
-
-
 </style>
 
 
@@ -50,36 +46,49 @@ table, td, th{
     </div>
 </div>
 
+<!-- About Section -->
+<div class="w3-container" style="background-color: #f2f3f5; padding:40px 0px 0px 20px">
+    <div class="w3-container w3-padding-32">
+        <h3>Welcome!</h3>
+        <p>
+            This is our interactive web app designed to investigate the question: <i>"What is the best country in which
+            to live?"</i>
+        </p>
+        <p>
+            The below sections strives to assist users in answering this question for themselves by giving them a
+            easy way to explore data collected on various countries provided by the sources cited at the bottom of this
+            page.
+        </p>
+    </div>
+</div>
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
-    <!-- About Section -->
-    <div class="w3-container w3-padding-32">
-        <br><br>
-        <p>
-            This is an interactive web app designed to investigate the question: "What is the best country in which to
-            live?"
-            The below sections strives to assist users in answering this question for themselves by giving them a easy
-            way to explore data collected on various countries provided by the sources cited at the bottom of this page.
-        </p>
-    </div>
-
     <!-- General Attributes Section -->
-    <div class="w3-container w3-padding-32" id="Plot1">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Best Countries by Attributes</h3>
+    <div class="w3-container" style="0px 0px 0px 32px" id="Plot1">
+        <h3 class="w3-border-bottom w3-border-light-grey" style="padding-top:16px; padding-bottom:5px">
+            Best Countries by Attributes
+        </h3>
 
         <p>
             The charts below compare select indicators for education, health, workforce utilization, happiness,
             and military spending for each country (see next section for variable descriptions).
-        </p>
+        </p><br>
 
         <h5>Navigating the plots:</h5>
-        The bar chart has each attribute min-max scaled (from 0 to 1).
-        You may isolate any attributes you wish using the selector to thr right by double clicking it.
-        Double click again to revert to all attributes selected.<br>
-        The box-scatter plots contain points for each country, over which you can hover your mouse to view the country
-        and associated value.
+        <p>
+            The bar chart has each attribute min-max scaled (from 0 to 1). <br />
+            Hover over each bar for the country name associated with that bar, and other information.
+            You may isolate any attributes you wish using the selector to the right by double clicking it.
+            Double click again to revert to all attributes selected.
+            Click once to select or deselect multiple attributes.
+        </p>
+        <p>
+            The box-scatter plots contain points for each country, over which you can hover your mouse to view the
+            country name and associated value.
+            Use the dropdown to the left of the plot to view single attribute description and bar-scatter plot.
+        </p>
         <br>
         {% include "plots1.html" %}
     </div>
@@ -87,7 +96,9 @@ table, td, th{
 
     <!-- Attribute Descriptions Section -->
     <div class="w3-container w3-padding-32" id="Table1">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Attribute Description Guide</h3>
+        <h3 class="w3-border-bottom w3-border-light-grey" style="padding-top:16px; padding-bottom:5px">
+            Attribute Description Guide
+        </h3>
         <p>This table contains a description of each attribute in the above plots.</p>
         <br>
         <table>
@@ -100,7 +111,9 @@ table, td, th{
 
     <!-- Data Science Salary Countries Section -->
     <div class="w3-container w3-padding-32" id="Plot2">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Data Science Salaries by Country</h3>
+        <h3 class="w3-border-bottom w3-border-light-grey" style="padding-top:16px; padding-bottom:5px">
+            Data Science Salaries by Country
+        </h3>
         <p>We have included a chart of data scientist incomes below to help answer the only question all of us here are
             interested in:<br>"What is the best country for a data scientist to live in?"<br>These data were collected
             from the 2018 Kaggle ML & DS Survey, and include average pay by country for people with the title<br>"Data
@@ -112,7 +125,9 @@ table, td, th{
 
     <!-- Data Sources Section -->
     <div class="w3-container w3-padding-32">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Data Sources</h3>
+        <h3 class="w3-border-bottom w3-border-light-grey" style="padding-top:16px; padding-bottom:5px">
+            Data Sources
+        </h3>
         <p>The data used in this app was pulled from the below sources.</p>
         <br>
         <a href="https://databank.worldbank.org/source/world-development-indicators">2018 World bank World Development
