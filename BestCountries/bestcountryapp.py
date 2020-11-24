@@ -27,6 +27,7 @@ with open('bycont.csv') as csvfile:
 # drop columns that are mostly empty
 df = df.drop(columns=['unempbenefits', 'afp_totlabforce', 'afp_total', 'cgd_total', 'peacekeepers',
                       'suic_mortalityrate_pop', 'suic_mortalityrate_female', 'suic_mortalityrate_male'])
+df['milexp_usd'] /= 10000000000
 
 
 # ===========================
