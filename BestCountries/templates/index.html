@@ -34,6 +34,13 @@ table, td, th{
 }
 
 
+
+
+
+
+
+
+
 </style>
 
 
@@ -74,11 +81,27 @@ table, td, th{
         <p>
             The charts below compare select indicators for education, health, workforce utilization, happiness,
             and military spending for each country (see next section for variable descriptions).
-        </p><br>
-
+        </p>
+        <p>
+            These indicators can be used to compare countries on the desirability for data scientist residence.
+            Traditionally, for a viable data science career, a country needed to provide the proper business
+            environment, technical infrastructure, and properly trained workforce. In addition, health factors are
+            important for any resident of the country. Military spending was included because it is representative of
+            the overall influence of countries, and when choosing the desirability of a country for residence, some
+            individuals may prefer to avoid countries that overly invest in military powers.
+        </p>
+        <p>
+            An additional consideration is in the post-pandemic world, companies will be more open to employees and
+            consultants working from the location of their choice. In this case, the major factors to allow a viable
+            data science practice at the very basic level may only include reliable electricity and high-speed Internet
+            service.
+        </p>
+        <br>
         <h5>Navigating the plots:</h5>
         <p>
-            The bar chart has each attribute min-max scaled (from 0 to 1). <br />
+            The bar chart has each attribute min-max scaled (from 0 to 1).
+            The main purpose for the scaling is to allow direct comparisons between the countries and various attributes
+            in a single visual.<br/>
             Hover over each bar for the country name associated with that bar, and other information.
             You may isolate any attributes you wish using the selector to the right by double clicking it.
             Double click again to revert to all attributes selected.
@@ -114,12 +137,20 @@ table, td, th{
         <h3 class="w3-border-bottom w3-border-light-grey" style="padding-top:16px; padding-bottom:5px">
             Data Science Salaries by Country
         </h3>
-        <p>We have included a chart of data scientist incomes below to help answer the only question all of us here are
-            interested in:<br>"What is the best country for a data scientist to live in?"<br>These data were collected
-            from the 2018 Kaggle ML & DS Survey, and include average pay by country for people with the title<br>"Data
-            Scientist", "Data Analyst", or "Data Engineer".
         <p>
-            {% include "plots2.html" %}
+            We have included a chart of data scientist incomes below to help answer the only question all of us here are
+            interested in:
+        </p>
+        <p>
+            <i>"What is the best country for a data scientist to live in?"</i>
+        </p>
+        <p>
+            This data was collected from the 2018 Kaggle ML & DS Survey, and include average pay by country for people
+            with job titles:<br/>
+            "Data Scientist", "Data Analyst", or "Data Engineer".<br><br>
+            Mouse over the bars to view country names and average yearly salary estimates.
+        </p>
+        {% include "plots2.html" %}
     </div>
 
 
