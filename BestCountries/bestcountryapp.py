@@ -16,7 +16,7 @@ import json
 app = Flask(__name__)
 
 # ===========================
-# IMPORT DATA
+# IMPORT DATA .
 # ===========================
 # TODO change when importing into flask
 df = pd.read_csv('allData.csv', header=0)
