@@ -23,7 +23,11 @@ The user can get a better look at the data, by picking an area (countries are gr
 
 ![](images/screenshot_3.png)
 
+The user can also view each attribute for each country using the scatter-box plot, as shown below:
+
 ![](images/screenshot_4.png)
+
+Hovering over scatter points gives info like the counntry name and the attribute value:
 
 ![](images/screenshot_5.png)
 
