@@ -15,7 +15,11 @@ Below, are some screenshots of what you will see upon running the app:
 
 ![](images/screenshot_1.png)
 
+The bar chart below is a zoomed out view of all countries. Each attribute is stacked on top of the other, with min-max scaling, for better comparison.
+
 ![](images/screenshot_2.png)
+
+The user can get a better look at the data, by picking an area (countries are grouped by continent) and zooming in, as shown below:
 
 ![](images/screenshot_3.png)
 
